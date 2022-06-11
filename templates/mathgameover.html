@@ -14,6 +14,7 @@
         let message = document.createElement("h2");
         message.textContent = `Your score was ${sessionStorage.getItem("currScore")}!`;
         messageSpot.appendChild(message);
+        sessionStorage.clear();
     </script>
 </body>
 </html>
