@@ -9,12 +9,17 @@
 <body>
     <h2>Game over!</h2>
     <div id="messageSpot"></div>
+    <h2>If you want to save your score to the leaderboard, write your name below! 
+        Or, to go back to the home page, just click the button</h2>
+    <a href="{{url_for('home')}}"><button>Back to home page</button></a>
+    <form id="nameForm">
+        <input type="text" id="name">
+    </form>
     <script>
         let messageSpot = document.getElementById("messageSpot");
         let message = document.createElement("h2");
         message.textContent = `Your score was ${sessionStorage.getItem("currScore")}!`;
         messageSpot.appendChild(message);
-        sessionStorage.clear();
     </script>
 </body>
 </html>
