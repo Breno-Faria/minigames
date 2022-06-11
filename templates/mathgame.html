@@ -12,5 +12,14 @@
         <input type="number" required="on" autofocus id="answer">
         <input type="submit">
     </form>
+    <script>
+        setInterval(() => {
+            let today = new Date();
+            if (today.getMinutes() === eval(localStorage.getItem("currMin")) + 2 && today.getSeconds() === eval(localStorage.getItem("currSec")))
+            {
+                window.location.href="{{url_for('mathgameover')}}"
+            }
+        }, 1000)
+    </script>
 </body>
 </html>

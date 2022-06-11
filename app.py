@@ -9,3 +9,7 @@ def home():
 @app.route("/mathgame")
 def mathgame():
     return render_template("mathgame.html")
+
+@app.route("/mathgameover")
+def mathgameover():
+    return render_template("mathgameover.html")
