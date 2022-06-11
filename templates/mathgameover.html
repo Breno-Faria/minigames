@@ -9,13 +9,15 @@
 <body>
     <h2>Game over!</h2>
     <div id="messageSpot"></div>
-    <h2>If you want to save your score to the leaderboard, write your name below! 
-        Or, to go back to the home page, just click the button</h2>
-    <form id="nameForm">
-        <input type="text" id="name">
+    <p>If you want to save your score to the leaderboard, write your name below! 
+        Or, to go back to the home page, just click the button</p>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Up to 15 characters" maxlength="15">
+        <input type="hidden" name="score" value="" id="scorePost">
     </form>
     <a href="{{url_for('home')}}"><button>Back to home page</button></a>
     <script>
+        document.getElementById("scorePost").value = sessionStorage.getItem("currScore");
         let messageSpot = document.getElementById("messageSpot");
         let message = document.createElement("h2");
         message.textContent = `Your score was ${sessionStorage.getItem("currScore")}!`;
