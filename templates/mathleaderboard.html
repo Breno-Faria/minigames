@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math leaderboard!</title>
+</head>
+<body>
+
+    <ol>
+        {% for player in players %}
+            <li>{{ player[1]}}: {{ player[2] }}</li>
+        {% endfor %}
+    </ol>
+
+    <a href="{{ url_for('home') }}"><button>return to home page</button></a>
+</body>
+</html>

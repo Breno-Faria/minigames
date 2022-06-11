@@ -37,5 +37,17 @@ def mathgameover():
         connection.commit()
         cursor.close()
         connection.close()
-        return redirect(url_for('home'))
+        return redirect(url_for('mathleaderboard'))
     return render_template("mathgameover.html")
+
+@app.route("/mathleaderboard")
+def mathleaderboard():
+    connection = connect_to_db()
+    cursor = connection.cursor()
+    cursor.execute(
+        'SELECT * FROM leaderboard ORDER BY score desc limit 10'
+    )
+    players = cursor.fetchall()
+    cursor.close()
+    connection.close()
+    return render_template("mathleaderboard.html", players=players)
