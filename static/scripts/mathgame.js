@@ -14,7 +14,7 @@ function score()
 	let mathForm = document.getElementById("mathForm");
 	mathForm.addEventListener("submit", () => {
 		let answer = document.getElementById("answer").value;
-		let correctAnswer = eval(document.getElementById("newQuestion").textContent);
+		let correctAnswer = eval(document.getElementById("newQuestion").textContent.replace("x", "*").replace("÷", "/"));
 		let currScore = eval(sessionStorage.getItem("currScore"));
 		if (answer == correctAnswer)
 		{
@@ -42,7 +42,7 @@ function getRandomQuestion()
 		case 1:
 			return `${getRandomNumber(100)} - ${getRandomNumber(100)}`;
 		case 2:
-			return `${getRandomNumber(10)} * ${getRandomNumber(10)}`;
+			return `${getRandomNumber(10)} x ${getRandomNumber(10)}`;
 		case 3:
 			let num1 = getRandomNumber(10);
             let num2 = getRandomNumber(10);
@@ -51,7 +51,7 @@ function getRandomQuestion()
                 num1 = getRandomNumber(10);
                 num2 = getRandomNumber(10);
             }
-            return `${num1} / ${num2}`;
+            return `${num1} ÷ ${num2}`;
         default:
             return "something went wrong";
 	}
