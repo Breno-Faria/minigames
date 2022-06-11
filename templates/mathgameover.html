@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    Game over!
+    <h2>Game over!</h2>
+    <div id="messageSpot"></div>
+    <script>
+        let messageSpot = document.getElementById("messageSpot");
+        let message = document.createElement("h2");
+        message.textContent = `Your score was ${sessionStorage.getItem("currScore")}!`;
+        messageSpot.appendChild(message);
+    </script>
 </body>
 </html>

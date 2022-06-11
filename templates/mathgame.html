@@ -8,12 +8,15 @@
     <script src="static/scripts/mathgame.js"></script>
 </head>
 <body>
+    <div id="questionSpot"></div>
     <form id="mathForm">
         <input type="number" required="on" autofocus id="answer">
         <input type="submit">
     </form>
     <script>
         check("{{url_for('mathgameover')}}");
+        createQuestion();
+        score();
     </script>
 </body>
 </html>

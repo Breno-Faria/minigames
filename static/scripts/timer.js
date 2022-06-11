@@ -2,6 +2,7 @@ const play = document.querySelector(".play");
 
 play.addEventListener("click", () => {
     let today = new Date();
-    localStorage.setItem("currSec", today.getSeconds());
-    localStorage.setItem("currMin", today.getMinutes());
+    sessionStorage.setItem("currSec", today.getSeconds());
+    sessionStorage.setItem("currMin", today.getMinutes());
+    sessionStorage.setItem("currScore", "0");
 })

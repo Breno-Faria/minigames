@@ -2,7 +2,7 @@ function check(url)
 {
 	setInterval(() => {
 		let today = new Date();
-		if (today.getMinutes() === eval(localStorage.getItem("currMin")) && today.getSeconds() === eval(localStorage.getItem("currSec")) + 5)
+		if (today.getMinutes() === eval(sessionStorage.getItem("currMin")) && today.getSeconds() >= eval(sessionStorage.getItem("currSec")) + 30)
 		{
 			window.location.href=url;
 		}
@@ -14,15 +14,24 @@ function score()
 	let mathForm = document.getElementById("mathForm");
 	mathForm.addEventListener("submit", () => {
 		let answer = document.getElementById("answer").value;
+		let correctAnswer = eval(document.getElementById("newQuestion").textContent);
+		let currScore = eval(sessionStorage.getItem("currScore"));
+		if (answer == correctAnswer)
+		{
+			sessionStorage.setItem("currScore", (++currScore).toString())
+		}
 
 	})
 }
 
-
-
-
-
-
+function createQuestion()
+{
+	let question = document.createElement("p");
+	question.setAttribute("id", "newQuestion");
+	question.textContent = getRandomQuestion();
+	let questionSpot = document.getElementById("questionSpot");
+	questionSpot.appendChild(question);
+}
 
 function getRandomQuestion()
 {
