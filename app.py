@@ -1,17 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect
 import psycopg2
 import os
+from psqldb import connect_to_db
 
 app = Flask(__name__)
-
-def connect_to_db():
-    connection = psycopg2.connect(
-        host="localhost",
-        database="games_project",
-        user=os.environ['DB_USERNAME'],
-        password=os.environ['DB_PASSWORD'],
-    )
-    return connection
 
 @app.route("/")
 def home():
