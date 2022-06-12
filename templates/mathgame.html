@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How fast can you do math?</title>
     <script src="static/scripts/mathgame.js"></script>
+    <link rel="stylesheet" href="../static/styles/mathgame.css">
 </head>
 <body>
-    <div id="questionSpot"></div>
-    <form id="mathForm">
-        <input type="number" required="on" autofocus id="answer">
-        <input type="submit">
-    </form>
+    <div id="container">
+        <div id="form">
+            <div id="questionSpot"></div>
+            <form id="mathForm">
+                <input type="number" required="on" autofocus id="answer">
+                <input type="submit" id="submitBtn">
+            </form>
+        </div>
+    </div>
     <script>
         check("{{url_for('mathgameover')}}");
         createQuestion();
