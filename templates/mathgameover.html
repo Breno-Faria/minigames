@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game over</title>
+    <link rel="stylesheet" href="../static/styles/mathgameover.css">
 </head>
 <body>
-    <h2>Game over!</h2>
-    <div id="messageSpot"></div>
-    <p>If you want to save your score to the leaderboard, write your name below! 
-        Or, to go back to the home page, just click the button</p>
-    <form method="POST">
-        <input type="text" name="name" placeholder="Up to 15 characters" maxlength="15">
-        <input type="hidden" name="score" value="" id="scorePost">
-    </form>
-    <a href="{{url_for('home')}}"><button>Back to home page</button></a>
+    <div id="container">
+        <img src="../static/img/gameovertext.png" alt="game over">
+        <div id="messageSpot"></div>
+        <div id="textMessage"><p>If you want to save your score to the leaderboard, write your name below! 
+            Or, to go back to the home page, just click the button</p></div>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Up to 15 characters" maxlength="15">
+            <input type="submit">
+            <input type="hidden" name="score" value="" id="scorePost">
+        </form>
+        <a href="{{url_for('home')}}"><button>Back to home page</button></a>
+    </div>
+
+
     <script>
         document.getElementById("scorePost").value = sessionStorage.getItem("currScore");
         let messageSpot = document.getElementById("messageSpot");
-        let message = document.createElement("h2");
+        let message = document.createElement("h1");
         message.textContent = `Your score was ${sessionStorage.getItem("currScore")}!`;
         messageSpot.appendChild(message);
     </script>
