@@ -7,8 +7,9 @@ app = Flask(__name__, static_folder='static')
 
 def connect_to_db():
     connection = psycopg2.connect(
-        host="localhost",
-        database="games_project",
+        host=os.environ['host'],
+        database=os.environ['database'],
+        port=os.environ['port'],
         user=os.environ['user'],
         password=os.environ['password'],
     )
