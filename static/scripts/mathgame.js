@@ -2,7 +2,7 @@ function check(url)
 {
 	setInterval(() => {
 		let today = new Date();
-		if (today.getMinutes() === eval(sessionStorage.getItem("currMin")) + 20 && today.getSeconds() >= eval(sessionStorage.getItem("currSec")))
+		if (today.getMinutes() === eval(sessionStorage.getItem("currMin")) + 0 && today.getSeconds() >= eval(sessionStorage.getItem("currSec")) + 5)
 		{
 			window.location.href=url;
 		}
