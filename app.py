@@ -3,7 +3,7 @@ import psycopg2
 import os
 from boto.s3.connection import S3Connection
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 def connect_to_db():
     connection = psycopg2.connect(
