@@ -1,0 +1,52 @@
+body
+{
+    background-image: url(../img/backgroundimg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+#container
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.buttons
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(69, 4, 153, 0.753);
+    padding: 4%;
+    border-radius: 1rem;
+    margin-top: 10%;
+    height: 20rem;
+
+
+}
+
+.buttons h1
+{
+    text-decoration: underline;
+}
+
+button
+{
+    padding: 1rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    background: none;
+    color: white;
+
+}
