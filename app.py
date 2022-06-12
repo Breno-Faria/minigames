@@ -1,9 +1,18 @@
 from flask import Flask, render_template, request, url_for, redirect
 import psycopg2
 import os
-from psqldb import connect_to_db
+from boto.s3.connection import S3Connection
 
 app = Flask(__name__)
+
+def connect_to_db():
+    connection = psycopg2.connect(
+        host="localhost",
+        database="games_project",
+        user=os.environ['user'],
+        password=os.environ['password'],
+    )
+    return connection
 
 @app.route("/")
 def home():
