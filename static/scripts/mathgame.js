@@ -1,6 +1,12 @@
 function check(url)
 {
-	setTimeout(() => window.location.href=url, 30000);
+	setInterval(() => {
+		let today = new Date();
+		if (today.getMinutes() === eval(sessionStorage.getItem("initMin")) && today.getSeconds() === eval(sessionStorage.getItem("initSec")) + 5)
+		{
+			window.location.href = url;
+		}
+	})
 }
 
 function score()
