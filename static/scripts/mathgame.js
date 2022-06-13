@@ -1,12 +1,30 @@
 function check(url)
 {
+	let initMin = eval(sessionStorage.getItem("initMin"));
+	let initSec = eval(sessionStorage.getItem("initSec"));
+
 	setInterval(() => {
 		let today = new Date();
-		if (today.getMinutes() === eval(sessionStorage.getItem("initMin")) && today.getSeconds() === eval(sessionStorage.getItem("initSec")) + 30)
+		let currMin = today.getMinutes();
+		let currSec = today.getSeconds();
+
+		if (initSec + 30 > 59)
 		{
-			window.location.href = url;
+			if(currMin === initMin + 1 && currSec === 59 - initSec)
+			{
+				window.location.href=url;
+			}
 		}
-	})
+
+		else
+		{
+			if (currSec === initSec + 30)
+			{
+				window.location.href=url;
+			}
+		}
+
+	}, 1000)
 }
 
 function score()
