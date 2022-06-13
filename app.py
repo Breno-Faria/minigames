@@ -47,7 +47,7 @@ def mathleaderboard():
     connection = connect_to_db()
     cursor = connection.cursor()
     cursor.execute(
-        'SELECT * FROM leaderboard ORDER BY score desc limit 10'
+        'SELECT * FROM leaderboard ORDER BY score desc'
     )
     players = cursor.fetchall()
     cursor.close()

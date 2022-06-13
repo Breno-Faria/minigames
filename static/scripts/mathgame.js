@@ -10,7 +10,7 @@ function check(url)
 
 		if (initSec + 30 > 59)
 		{
-			if(currMin === initMin + 1 && currSec === 60 - initSec)
+			if(currMin >= initMin + 1 && currSec >= 60 - initSec)
 			{
 				window.location.href=url;
 			}
@@ -18,7 +18,7 @@ function check(url)
 
 		else
 		{
-			if (currSec === initSec + 30)
+			if (currSec >= initSec + 30)
 			{
 				window.location.href=url;
 			}
