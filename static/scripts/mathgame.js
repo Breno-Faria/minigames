@@ -1,3 +1,17 @@
+function mode2check(url)
+{
+		let mathForm = document.getElementById("mathForm");
+		mathForm.addEventListener("submit", () => {
+		let answer = document.getElementById("answer").value;
+		let correctAnswer = eval(document.getElementById("newQuestion").textContent.replace("x", "*").replace("÷", "/"));
+		if (answer != correctAnswer)
+		{
+			window.location.href=url;
+			alert("Wrong answer! Poor penguins :(")
+		}
+	})
+}
+
 function check(url)
 {
 	let initMin = eval(sessionStorage.getItem("initMin"));

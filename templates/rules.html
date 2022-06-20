@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="static/styles/index.css">
+	<link rel="stylesheet" href="../static/styles/index.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgba(169, 166, 173, 0.5);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: black;
+            font-size: x-large;
+            font-weight: bolder;
+            width: 20rem;
+        }
+    </style>
+</head>
+<body>
+	<div id="container">
+		<h1>Rules</h1>
+        <div class="node">
+            <h2>ARCADE:</h2>
+            <p>Try to answer as many questions as possible! You will have 30 seconds until the timer
+                expires. Doesn't matter if it's right, it has to be quick!
+            </p>
+        </div>
+        <div class="node">
+            <h2>TIME BOMB:</h2>
+            <p>Here, precision matters. There is a 5 seconds timer going down constantly, and the only
+                way to reset it is answering correctly, otherwise: GAME OVER
+            </p>
+        </div>
+        <h3>Ready to play?</h3>
+        <a href="{{ url_for('home') }}"><button style="background-color:rgba(58, 58, 58, 0.5)">return to the home page!</button></a>
+	</div>
+</body>
+</html>
