@@ -26,13 +26,6 @@ button
     width: 20rem;
 }
 
-h1
-{
-    color: white;
-    font-size: x-large;
-    font-weight: bolder;
-}
-
 #container
 {
     display: flex;
